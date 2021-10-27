@@ -98,8 +98,9 @@ TODO Compare the tree and generate stats
 
 '''
 
-# Run RAxML
-# raxml('test2.fasta','output_raxaml.tre')
+
+#Run RAxML
+raxml('test2.fasta','output_raxaml.tre')
 
 
 branch_collapse('RAxML_result.output_raxaml.tre','0.3','collapsed.tre')
