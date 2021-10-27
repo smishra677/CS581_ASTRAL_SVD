@@ -15,7 +15,7 @@ def raxml(input_,output):
 
 #astral
 def astral(input_,output):
-	os.system('java -jar astral.5.7.8.jar -i'+input_+'-o'+output)
+	os.system('java -jar astral.5.7.8.jar -i'+input_+' -o'+output)
 
 #branch collapse
 def branch_collapse(input_,threshold,output):
@@ -100,10 +100,12 @@ TODO Compare the tree and generate stats
 
 
 #Run RAxML
-raxml('test2.fasta','output_raxaml.tre')
+#raxml('test2.fasta','output_raxaml.tre')
 
 
-branch_collapse('RAxML_result.output_raxaml.tre','0.3','collapsed.tre')
+#astral('RAxML_result.output_raxaml.tre', 'astral.tre')
+
+branch_collapse('astral.tre','0.1','collapsed.tre')
 dict0=get_polytomies('collapsed.tre')
 #pprint.pprint(dictn)
 dict1=select_polytomies(dict0,5)
@@ -111,6 +113,7 @@ dict1=select_polytomies(dict0,5)
 for i in dict1.keys():
 	send={}
 	send[i]=dict1[i]
+	print(len(dict1[i]))
 	if len(dict1[i])>=4:
 		print(send)
 		dict2= get_sequences('test.fasta',send)
