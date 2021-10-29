@@ -1,0 +1,1 @@
+exe output.nex;svd;savetrees file='out_svd.tre' format='newick';quit;

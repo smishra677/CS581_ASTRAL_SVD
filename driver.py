@@ -100,10 +100,10 @@ TODO Compare the tree and generate stats
 
 
 #Run RAxML
-#raxml('test2.fasta','output_raxaml.tre')
+#raxml('test.fasta','output_raxaml.tre')
 
 
-#astral('RAxML_result.output_raxaml.tre', 'astral.tre')
+astral('RAxML_result.output_raxaml.tre', 'astral.tre')
 
 branch_collapse('astral.tre','0.1','collapsed.tre')
 dict0=get_polytomies('collapsed.tre')
