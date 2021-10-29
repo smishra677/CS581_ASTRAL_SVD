@@ -42,7 +42,7 @@ def get_polytomies(input_):
 	polytomies = []
 	dictionary_={}
 	for node in tree.postorder_node_iter():
-	    if len(node._child_nodes) > 2:
+	    if len(node._child_nodes) > 3:
 	    	dictionary_[node]=[]
 	    	for children in node._child_nodes:
 	    		dictionary_[node].append(children)
@@ -53,15 +53,34 @@ def get_polytomies(input_):
 
 
 def select_polytomies(dictionary_,Degree):
+	#Selected_polytomies contains all the leaves under the subtree. It is a 2d dictionary[i][j] where i represents the 
+	#orginal polytomy and j represents the head_node of the subtree. Input dictionary_ will have multiple polytomies from 
+	#the original tree
 	selected_polytomies={}
-
 	for node in dictionary_.keys():
-		if (len(dictionary_[node]))<=Degree:
-			selected_polytomies[node]=dictionary_[node]
-		else:
-			selected_polytomies[node]=random.sample(dictionary_[node],Degree)
+		selected_polytomies[node]={}
+		for j in dictionary_[node]:
+			if j.is_leaf():
+				selected_polytomies[node][j]=[j]
+			else:
+				selected_polytomies[node][j]=[]
+				for i in Tree(seed_node=j).postorder_node_iter():
+					if i.is_leaf():
+						selected_polytomies[node][j].append(i)
 
-	return selected_polytomies
+	#selected_polymtomie_D contains randomly selected polytomies. If the subtree contains less than D leaves than we select all
+	#else we randomize our selection
+	selected_polytomies_D={}
+	for poly in selected_polytomies.keys():
+		selected_polytomies_D[poly]=[]
+		for head_ in selected_polytomies[poly].keys():
+			if (len(selected_polytomies[poly][head_]))<=Degree:
+				selected_polytomies_D[poly]= selected_polytomies_D[poly]+selected_polytomies[poly][head_]
+			else:
+				selected_polytomies_D[poly]=selected_polytomies_D[poly]+random.sample(selected_polytomies[poly][head_],Degree)
+
+	pprint.pprint(selected_polytomies_D)
+	return selected_polytomies_D
 
 
 
@@ -134,20 +153,19 @@ TODO Compare the tree and generate stats
 
 #astral('RAxML_result.output_raxaml.tre', 'astral.tre')
 
-branch_collapse('out_try.tree','1','collapsed.tre')
+branch_collapse('out_try.tree','0.1','collapsed.tre')
 dict0,tree_=get_polytomies('collapsed.tre')
-#pprint.pprint(dictn)
-dict1=select_polytomies(dict0,5)
+dict1=select_polytomies(dict0,2)
 #pprint.pprint(dict1)
 for i in dict1.keys():
 	send={}
 	send[i]=dict1[i]
 	if len(dict1[i])>=4:
 		#pprint.pprint(send)
-		#dict2= get_sequences('test.fasta',send)
-		#print(dict2)
-		#write_fatsa(dict2)
-		#convert_fatsa_nexus('filtered.fasta','output.nex')
+		dict2= get_sequences('test.fasta',send)
+		print(dict2)
+		write_fatsa(dict2)
+		convert_fatsa_nexus('filtered.fasta','output.nex')
 		#run_svd()
 		regraft(tree_,send)
 
