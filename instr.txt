@@ -1,1 +1,2 @@
-exe output.nex;svd;savetrees file='out_svd.tre' format='newick';quit;
+exe COMBINED.nex;svd showScores=no evalQuartets=all qformat=qmc replace=no;savetrees file='out_svd.tre' format='newick';quit;
+
