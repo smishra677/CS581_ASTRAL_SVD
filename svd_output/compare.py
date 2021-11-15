@@ -39,159 +39,169 @@ def compareDendropyTrees(tr1, tr2):
     rf = float(fp + fn) / (ei1 + ei2)
     return (nl, ei1, ei2, fp, fn, rf)
 
-#f=open('stats_final_1_t.txt','w+')
-#f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Method','dataset','nl', 'ei1', 'ei2','fp', 'fn', 'rf'))
+f=open('stats_final_1_t.txt','w+')
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Method','dataset','nl', 'ei1', 'ei2','fp', 'fn', 'rf'))
 
 
 
-print(compareTreesFromPath('astral_6_04_1000.tre','true-species_6_04.tre'))
 
-print(compareTreesFromPath('svd_6_04_1000.tre','true-species_6_04.tre'))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_04_1000.tre','true-species_6_04.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_4_1000.tre','true-species_6_04.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_05_1000.tre','true-species_6_05.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_07_1000.tre','true-species_6_07.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_05_1000.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_11_1000.tre','true-species_6_11.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_05_1000.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_13_1000.tre','true-species_6_13.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_16_1000.tre','true-species_6_16.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_5_1000.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_17_1000.tre','true-species_6_17.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_20_1000.tre','true-species_6_20.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_07_1000.tre','true-species_6_07.tre'))
 
-print(compareTreesFromPath('svd_6_07_1000.tre','true-species_6_07.tre'))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_04_500.tre','true-species_6_04.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_7_1000.tre','true-species_6_07.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_05_500.tre','true-species_6_05.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_07_500.tre','true-species_6_07.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_11_500.tre','true-species_6_11.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_11_1000.tre','true-species_6_11.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_13_500.tre','true-species_6_13.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_11_1000.tre','true-species_6_11.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_16_500.tre','true-species_6_16.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_17_500.tre','true-species_6_17.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_11_1000.tre','true-species_6_11.tre'))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_20_500.tre','true-species_6_20.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_13_1000.tre','true-species_6_13.tre'))
 
-print(compareTreesFromPath('svd_6_13_1000.tre','true-species_6_13.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_04_1000.tre','true-species_6_04.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_05_1000.tre','true-species_6_05.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_13_1000.tre','true-species_6_13.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_07_1000.tre','true-species_6_07.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_11_1000.tre','true-species_6_11.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_16_1000.tre','true-species_6_16.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_13_1000.tre','true-species_6_13.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_16_1000.tre','true-species_6_16.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_16_1000.tre','true-species_6_16.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_17_1000.tre','true-species_6_17.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_16_1000.tre','true-species_6_16.tre'))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_20_1000.tre','true-species_6_20.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_17_1000.tre','true-species_6_17.tre'))
 
-print(compareTreesFromPath('svd_6_17_1000.tre','true-species_6_17.tre'))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_04_500.tre','true-species_6_04.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_17_1000.tre','true-species_6_17.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_05_500.tre','true-species_6_05.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_07_500.tre','true-species_6_07.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_20_1000.tre','true-species_6_20.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_11_500.tre','true-species_6_11.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_20_1000.tre','true-species_6_20.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_13_500.tre','true-species_6_13.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_16_500.tre','true-species_6_16.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_20_1000.tre','true-species_6_20.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_17_500.tre','true-species_6_17.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
-print('----------------------------------------------')
-print('----------------------------------------------')
 
-print(compareTreesFromPath('astral_6_04_500.tre','true-species_6_04.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('svd_6_20_500.tre','true-species_6_20.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('svd','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_04_500.tre','true-species_6_04.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_4_1000.tre','true-species_6_04.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_5_1000.tre','true-species_6_05.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_4_500.tre','true-species_6_04.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_7_1000.tre','true-species_6_07.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_11_1000.tre','true-species_6_11.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_13_1000.tre','true-species_6_13.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_05_500.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_16_1000.tre','true-species_6_16.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_05_500.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_17_1000.tre','true-species_6_17.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
 
-print(compareTreesFromPath('out_final_6_5_500.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_20_1000.tre','true-species_6_20.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
 
-print(compareTreesFromPath('astral_6_07_500.tre','true-species_6_07.tre'))
 
-print(compareTreesFromPath('svd_6_07_500.tre','true-species_6_07.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_4_500.tre','true-species_6_04.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_5_500.tre','true-species_6_05.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_7_500.tre','true-species_6_07.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_7_500.tre','true-species_6_07.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_11_500.tre','true-species_6_11.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('astral_6_11_500.tre','true-species_6_11.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_13_500.tre','true-species_6_13.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('svd_6_11_500.tre','true-species_6_11.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_16_500.tre','true-species_6_16.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_17_500.tre','true-species_6_17.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-print(compareTreesFromPath('out_final_6_11_500.tre','true-species_6_11.tre'))
 
-print('----------------------------------------------')
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_20_500.tre','true-species_6_20.tre'))
+f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
 
-
-print(compareTreesFromPath('astral_6_13_500.tre','true-species_6_13.tre'))
-
-print(compareTreesFromPath('svd_6_13_500.tre','true-species_6_13.tre'))
-
-
-print(compareTreesFromPath('out_final_6_13_500.tre','true-species_6_13.tre'))
-
-print('----------------------------------------------')
-
-
-print(compareTreesFromPath('astral_6_16_500.tre','true-species_6_16.tre'))
-
-print(compareTreesFromPath('svd_6_16_500.tre','true-species_6_16.tre'))
-
-
-print(compareTreesFromPath('out_final_6_16_500.tre','true-species_6_16.tre'))
-
-print('----------------------------------------------')
-
-print(compareTreesFromPath('astral_6_17_500.tre','true-species_6_17.tre'))
-
-print(compareTreesFromPath('svd_6_17_500.tre','true-species_6_17.tre'))
-
-
-print(compareTreesFromPath('out_final_6_17_500.tre','true-species_6_17.tre'))
-
-print('----------------------------------------------')
-
-print(compareTreesFromPath('astral_6_20_500.tre','true-species_6_20.tre'))
-
-print(compareTreesFromPath('svd_6_20_500.tre','true-species_6_20.tre'))
-
-
-print(compareTreesFromPath('out_final_6_20_500.tre','true-species_6_20.tre'))
-
-print('----------------------------------------------')
+f.close()
