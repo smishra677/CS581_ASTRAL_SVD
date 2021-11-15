@@ -244,7 +244,7 @@ def regraft(tree_,dictionary_,dictionary_1,copy_translation):
 
 def write_tree(tree_):
 	f=open('out_final.tre','w+')
-	f.write(str(tree_))
+	f.write(str(tree_)+';')
 	f.close()
 
 
@@ -302,11 +302,15 @@ def compareDendropyTrees(tr1, tr2):
 #raxml('0001.fas','output_raxaml.tre')
 #astral('raxml-genes.tre', 'astral.tre')
 #
-branch_collapse('astral.tre','0.5','collapsed.tre')
+
+
+
+
+branch_collapse('astral.tre','0.4','collapsed.tre')
 dict0,tree_=get_polytomies('collapsed.tre')
 
 
-dict1,tree_,selected_polytomies,copy_translation=select_polytomies(tree_,dict0,5)
+dict1,tree_,selected_polytomies,copy_translation=select_polytomies(tree_,dict0,4)
 print(dict1)
 for i in dict1.keys():
 	send={}
@@ -315,6 +319,7 @@ for i in dict1.keys():
 	print(len(send[i]))
 	if len(send[i])>4:
 		#pprint.pprint(send)
+		print('00000')
 		get_sequences(send)
 		run_svd()
 		tree_=regraft(tree_,send,selected_polytomies[i],copy_translation).clone()
