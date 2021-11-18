@@ -113,14 +113,14 @@ def write_nexus():
 
 
 
-def get_sequences(dictionary_):
+def get_sequences(file__,dictionary_,m):
 	x='0000'
 	
 	file_list=[]
-	for i in range(1,501):
+	for i in range(1,int(m)+1):
 		file=(x[0:4-len(str(i))]+str(i))
 		file_='output_'+file+'.nex'
-		dictionary_input=SeqIO.to_dict(SeqIO.parse('./Fat_sa/'+file+'.fas','fasta'))
+		dictionary_input=SeqIO.to_dict(SeqIO.parse(file__+file+'.fas','fasta'))
 		dictionary_output={}
 
 	
@@ -133,10 +133,10 @@ def get_sequences(dictionary_):
 					else:
 						dictionary_output[k]=dictionary_input[tax]
 
-		with open('./Fat_sa/output_'+file+'.fasta', "w+") as handle:
+		with open(file__+file+'.fasta', "w+") as handle:
 				SeqIO.write(dictionary_output.values(),handle,'fasta')
 
-		AlignIO.convert('./Fat_sa/output_'+file+'.fasta', "fasta",'./Fat_sa/output_'+file+'.nex',"nexus","DNA")
+		AlignIO.convert(file__+file+'.fasta', "fasta",file__+file+'.nex',"nexus","DNA")
 		
 
 	write_nexus()
@@ -242,8 +242,8 @@ def regraft(tree_,dictionary_,dictionary_1,copy_translation):
 '''
 	return tree_
 
-def write_tree(tree_):
-	f=open('out_final.tre','w+')
+def write_tree(tree_,k,j,l):
+	f=open('./svd_output//out_final_'+k+'_'+j+'_'+l+'.tre','w+')
 	f.write(str(tree_)+';')
 	f.close()
 
@@ -304,30 +304,53 @@ def compareDendropyTrees(tr1, tr2):
 #
 
 
+def main(astral,file,k,j,l):
+	print(astral,file)
+	branch_collapse(astral,'0.4','collapsed_'+k+'_'+j+'_'+l+'.tre')
+	dict0,tree_=get_polytomies('collapsed'+j+'.tre')
 
 
-branch_collapse('astral.tre','0.4','collapsed.tre')
-dict0,tree_=get_polytomies('collapsed.tre')
+	dict1,tree_,selected_polytomies,copy_translation=select_polytomies(tree_,dict0,1)
+	print(dict1)
+	for i in dict1.keys():
+		send={}
+		#print(selected_polytomies)
+		send[i]=dict1[i]
+		print(len(send[i]))
+		if len(send[i])>=4:
+			#pprint.pprint(send)
+			print('00000')
+			get_sequences(file,send,l)
+			run_svd()
+			tree_=regraft(tree_,send,selected_polytomies[i],copy_translation).clone()
+
+	write_tree(tree_,k,j,l)
+
+	#print(compareTreesFromPath('true-species.tre','astral.tre'))
+
+	#print(compareTreesFromPath('true-species.tre','out_final.tre'))
+
+location='C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//'
 
 
-dict1,tree_,selected_polytomies,copy_translation=select_polytomies(tree_,dict0,4)
-print(dict1)
-for i in dict1.keys():
-	send={}
-	#print(selected_polytomies)
-	send[i]=dict1[i]
-	print(len(send[i]))
-	if len(send[i])>4:
-		#pprint.pprint(send)
-		print('00000')
-		get_sequences(send)
-		run_svd()
-		tree_=regraft(tree_,send,selected_polytomies[i],copy_translation).clone()
+folder_name=['25tax-1000gen-0bps-500K-1E-6-rand-miss']
+sub_folder_name_6=['04','05','07','11','13','16','17','20']
 
-write_tree(tree_)
 
-print(compareTreesFromPath('true-species.tre','astral.tre'))
+sub_folder_name_7=['03','04','05','08','09','12','15','16','17']
 
-#print(compareTreesFromPath('true-species.tre','out_final.tre'))
+li=['100','1000','500','250','50']
+
+for k in li:
+	for j in sub_folder_name_6:
+		main('./svd_output//astral_6_'+j+'_'+k+'.tre',location+j+'//','6',j,k)
+
+
+location='C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-7-rand//'
+
+
+for k in li:
+	for j in sub_folder_name_7:
+		main('./svd_output//astral_7_'+j+'_'+k+'.tre',location+j+'//','7',j,k)
 
 
