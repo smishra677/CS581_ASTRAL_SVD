@@ -236,8 +236,8 @@ TODO Compare the tree and generate stats
 
 def main(astral,file,k,j,l):
 	print(astral,file)
-	branch_collapse(astral,'0.8','collapsed_'+k+'_'+j+'_'+l+'.tre')
-	dict0,tree_=get_polytomies('collapsed_'+k+'_'+j+'_'+l+'.tre')
+	branch_collapse(astral,'0.8','collapsed/collapsed_'+k+'_'+j+'_'+l+'.tre')
+	dict0,tree_=get_polytomies('collapsed/collapsed_'+k+'_'+j+'_'+l+'.tre')
 
 
 	pprint.pprint(dict0)
