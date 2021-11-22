@@ -13,6 +13,11 @@ from Bio.Nexus import Nexus
 import os
 from Bio import AlignIO
 import copy
+import re
+
+
+
+
 
 
 
@@ -41,12 +46,16 @@ def run_svd():
 #get polytomies
 def get_polytomies(input_):
 	#detect polytomies got from dendropy
+
+
 	tax = TaxonNamespace()
 	tree = Tree.get(file=open(input_, 'r'),
 		            schema="newick",
 		            tree_offset=0,
 		            taxon_namespace=tax,
-		            preserve_underscores=True)
+		            suppress_edge_lengths=True,
+		            preserve_underscores=True,
+		            ignore_unrecognized_keyword_arguments=False)
 	polytomies = []
 	dictionary_={}
 	for node in tree.postorder_node_iter():
@@ -66,9 +75,6 @@ def select_polytomies(tree_,dictionary_,Degree):
 	#Selected_polytomies contains all the leaves under the subtree. It is a 2d dictionary[i][j] where i represents the 
 	#orginal polytomy and j represents the head_node of the subtree. Input dictionary_ will have multiple polytomies from 
 	#the original tree
-	for i in tree_.postorder_node_iter():
-		print(i)
-	print('-----------------------------------------------------')
 	tree_x=dendropy.Tree(tree_)
 	nds3 = [nd for nd in tree_.postorder_node_iter()]  
 	nds4 = [nd for nd in tree_x.postorder_node_iter()] 
@@ -101,8 +107,6 @@ def select_polytomies(tree_,dictionary_,Degree):
 				selected_polytomies_D[poly]=selected_polytomies_D[poly]+random.sample(selected_polytomies[poly][head_],Degree)
 
 	#pprint.pprint(selected_polytomies_D)
-	for i in tree_x.postorder_node_iter():
-		print(i)
 	return selected_polytomies_D,tree_x,selected_polytomies,copy_translation
 
 
@@ -119,7 +123,7 @@ def get_sequences(file__,dictionary_,m):
 	file_list=[]
 	for i in range(1,int(m)+1):
 		file=(x[0:4-len(str(i))]+str(i))
-		file_='output_'+file+'.nex'
+		#file_='output_'+file+'.nex'
 		dictionary_input=SeqIO.to_dict(SeqIO.parse(file__+file+'.fas','fasta'))
 		dictionary_output={}
 
@@ -131,12 +135,12 @@ def get_sequences(file__,dictionary_,m):
 					if tax not in dictionary_input.keys():
 						continue
 					else:
-						dictionary_output[k]=dictionary_input[tax]
+						dictionary_output[k]=dictionary_input[tax][:100]
 
 		with open(file__+file+'.fasta', "w+") as handle:
 				SeqIO.write(dictionary_output.values(),handle,'fasta')
 
-		AlignIO.convert(file__+file+'.fasta', "fasta",file__+file+'.nex',"nexus","DNA")
+		AlignIO.convert(file__+file+'.fasta', "fasta",'Fat_sa/'+file+'.nex',"nexus","DNA")
 		
 
 	write_nexus()
@@ -158,8 +162,9 @@ def regraft(tree_,dictionary_,dictionary_1,copy_translation):
 		            schema="newick",
 		            tree_offset=0,
 		            taxon_namespace=tax,
+		            suppress_edge_lengths=True,
 		            preserve_underscores=True)
-
+	print(tree)
 	taxon_to_remove=set()
 	for node in tree.postorder_node_iter():
 		tax_svd='581'
@@ -178,68 +183,33 @@ def regraft(tree_,dictionary_,dictionary_1,copy_translation):
 									lis_=set([str(i.taxon).strip('"').strip("'") for i in dictionary_1[key] if str(i.taxon) !='None'])
 									taxon_to_remove=taxon_to_remove.union(set(lis_))
 								else:
-									del node
+									tree.prune_nodes([node])
 				
 
 
 
-	pprint.pprint(dictionary_1)
-	print('----------------')
-	print(tree)
-	print('----------------')
+
 	for node in dictionary_.keys():
-		try:
-			for nd in tree_.postorder_node_iter():
-				if str(copy_translation[node])==str(nd):
-					nd.add_child(tree)
-		except:
-			continue
+		for nd in tree_.postorder_node_iter():
+			if str(copy_translation[node])==str(nd):
+				nd.add_child(tree)
 
-	for node in dictionary_1.keys():
-		print(node)
+	print(tree)
+	print('----------------------------------------------------------')
+	print(tree_)
+	#print(tree_.prune_subtree(list(dictionary_1.keys())))
+	merge_dict=[]
+	#print(copy_translation)
+	for i in dictionary_1.keys():
+		for k in dictionary_1[i]:
+			merge_dict.append(copy_translation[k])
 
-	print('-----------------------------------------')
-	for node in dictionary_1.keys():
-		try:
-			for nd in tree_.postorder_node_iter():
-				if str(copy_translation[node])==str(nd):
-					if len(nd._child_nodes)==0:
-						del nd
-						break
-					else:
-						print(nd._child_nodes)
-						nd.remove_child(nd._child_nodes)
-		except:
-			continue
+	tree_.prune_nodes(merge_dict)
+
 
 	
 	print(tree_)
 
-	
-	'''
-	node_=list(dictionary_.keys())
-	print(node_)
-	key = node_[0]
-
-	children_to_prune=[]
-	children_to_prune_tree_id=[]
-	for i in tree.postorder_node_iter():
-		if str(i.taxon) !='None':
-			tax=str(i.taxon).strip('"').strip("'")
-			children_to_prune.append(tax)
-
-	print(children_to_prune)
-	tree_.prune_taxa_with_labels(children_to_prune)
-    
-	node_=list(dictionary_.keys())
-	
-	
-	for node in tree_.postorder_node_iter():
-		if str(node) == str(key):
-			print('aaaa')
-			node.add_child(tree)
-			break
-'''
 	return tree_
 
 def write_tree(tree_,k,j,l):
@@ -255,46 +225,6 @@ TODO Compare the tree and generate stats
 
 '''
 
-def compareTreesFromPath(treePath1, treePath2):
-    print("Comparing {} with {}".format(treePath1, treePath2))
-    tax = dendropy.TaxonNamespace()
-    tr1 = dendropy.Tree.get(path=treePath1,
-                            schema='newick',
-                            rooting='force-unrooted',
-                            taxon_namespace=tax,
-                            preserve_underscores=True)
-    tr2 = dendropy.Tree.get(path=treePath2,
-                            schema='newick',
-                            rooting='force-unrooted',
-                            taxon_namespace=tax,
-                            preserve_underscores=True)
-    tr1.collapse_basal_bifurcation(set_as_unrooted_tree=True)
-    tr2.collapse_basal_bifurcation(set_as_unrooted_tree=True)
-    return compareDendropyTrees(tr1, tr2)
-    #print("RF distance on %d shared leaves: %d" % (nl, fp + fn))
-def compareDendropyTrees(tr1, tr2):
-    from dendropy.calculate.treecompare \
-        import false_positives_and_negatives
-    lb1 = set([l.taxon.label for l in tr1.leaf_nodes()])
-    lb2 = set([l.taxon.label for l in tr2.leaf_nodes()])
-    com = lb1.intersection(lb2)
-    if com != lb1 or com != lb2:
-        com = list(com)
-        tns = dendropy.TaxonNamespace(com)
-        tr1.retain_taxa_with_labels(com)
-        tr1.migrate_taxon_namespace(tns)
-        tr2.retain_taxa_with_labels(com)
-        tr2.migrate_taxon_namespace(tns)
-    com = list(com)
-    tr1.update_bipartitions()
-    tr2.update_bipartitions()
-    nl = len(com)
-    ei1 = len(tr1.internal_edges(exclude_seed_edge=True))
-    ei2 = len(tr2.internal_edges(exclude_seed_edge=True))
-    [fp, fn] = false_positives_and_negatives(tr1, tr2)
-    rf = float(fp + fn) / (ei1 + ei2)
-    return (nl, ei1, ei2, fp, fn, rf)
-
 
 
 
@@ -306,23 +236,33 @@ def compareDendropyTrees(tr1, tr2):
 
 def main(astral,file,k,j,l):
 	print(astral,file)
-	branch_collapse(astral,'0.4','collapsed_'+k+'_'+j+'_'+l+'.tre')
-	dict0,tree_=get_polytomies('collapsed'+j+'.tre')
+	branch_collapse(astral,'0.8','collapsed_'+k+'_'+j+'_'+l+'.tre')
+	dict0,tree_=get_polytomies('collapsed_'+k+'_'+j+'_'+l+'.tre')
 
 
+	pprint.pprint(dict0)
+
+	print('---------------------------------------------------')
 	dict1,tree_,selected_polytomies,copy_translation=select_polytomies(tree_,dict0,1)
-	print(dict1)
+	pprint.pprint(dict1)
+	print('----------------------------------------------------')
 	for i in dict1.keys():
 		send={}
 		#print(selected_polytomies)
 		send[i]=dict1[i]
-		print(len(send[i]))
-		if len(send[i])>=4:
-			#pprint.pprint(send)
-			print('00000')
+		if len(send[i])>4:
 			get_sequences(file,send,l)
-			run_svd()
-			tree_=regraft(tree_,send,selected_polytomies[i],copy_translation).clone()
+			if os.path.exists("out_svd.tre"):
+				os.remove("out_svd.tre")
+			try:
+				run_svd()
+				tree_=regraft(tree_,send,selected_polytomies[i],copy_translation).clone()
+				break
+			except:
+				continue
+
+
+
 
 	write_tree(tree_,k,j,l)
 
@@ -345,8 +285,9 @@ for k in li:
 	for j in sub_folder_name_6:
 		main('./svd_output//astral_6_'+j+'_'+k+'.tre',location+j+'//','6',j,k)
 
-
 location='C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-7-rand//'
+
+
 
 
 for k in li:

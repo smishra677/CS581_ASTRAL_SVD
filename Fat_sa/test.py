@@ -8,7 +8,7 @@ os. chdir('Fat_sa/')
 file_list=[]
 for i in range(1,1001):
 	file=(x[0:4-len(str(i))]+str(i))
-	file='output_'+file+'.nex'
+	file=file+'.nex'
 	file_list.append(file)
 
 nexi = [(fname, Nexus.Nexus(fname)) for fname in file_list]

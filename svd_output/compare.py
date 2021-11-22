@@ -236,7 +236,7 @@ nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_7_17_1000.tre','t
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','1000',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
 
-
+'''
 
 nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_04_100.tre','true-species_6_04.tre'))
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','100',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
@@ -429,7 +429,7 @@ f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.forma
 
 
 
-
+'''
 
 nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_04_500.tre','true-species_6_04.tre'))
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
@@ -490,13 +490,13 @@ f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.forma
 
 
 
-nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_4_500.tre','true-species_6_04.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_04_500.tre','true-species_6_04.tre'))
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_5_500.tre','true-species_6_05.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_05_500.tre','true-species_6_05.tre'))
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
-nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_7_500.tre','true-species_6_07.tre'))
+nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_07_500.tre','true-species_6_07.tre'))
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('out_final','500',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
 nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('out_final_6_11_500.tre','true-species_6_11.tre'))
@@ -622,7 +622,7 @@ f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.forma
 
 
 
-
+'''
 nl, ei1, ei2, fp, fn, rf= list(compareTreesFromPath('astral_6_04_50.tre','true-species_6_04.tre'))
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Astral','50',str(nl), str(ei1), str(ei2), str(fp),str(fn),str(rf)))
 
@@ -1006,7 +1006,7 @@ f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.forma
 
 
 
-
+'''
 
 
 
