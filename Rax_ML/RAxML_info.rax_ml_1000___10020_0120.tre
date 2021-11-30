@@ -1,0 +1,72 @@
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.2.10 released by Alexandros Stamatakis on March 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 59 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.00%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 59
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -p 12345 -s C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//20//0120.fasta -n rax_ml_1000___10020_0120.tre -m GTRGAMMA 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.279 0.240 0.278 0.203 
+
+Inference[0]: Time 1.136850 GAMMA-based likelihood -701.687843, best rearrangement setting 10
+alpha[0]: 0.802424 rates[0] ac ag at cg ct gt: 1.229469 5.912498 0.771333 2.268838 1.297313 1.000000 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -701.687702 tree written to file C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_result.rax_ml_1000___10020_0120.tre
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -701.687702 .... 
+
+Final GAMMA-based Score of best tree -701.687627
+
+Program execution info written to C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_info.rax_ml_1000___10020_0120.tre
+Best-scoring ML tree written to: C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_bestTree.rax_ml_1000___10020_0120.tre
+
+Overall execution time: 1.463846 secs or 0.000407 hours or 0.000017 days
+

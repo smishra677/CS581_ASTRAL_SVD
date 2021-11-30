@@ -1,0 +1,127 @@
+
+
+IMPORTANT WARNING: Sequences 153 and 126 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 153 and 16 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 192 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 110 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 194 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 176 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 25 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 22 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 23 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 185 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 68 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 200 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 75 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 74 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 90 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 158 and 52 are exactly identical
+
+IMPORTANT WARNING
+Found 16 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+sequence duplicates removed is printed to file C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//07//0860.fasta.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.2.10 released by Alexandros Stamatakis on March 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 14 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.00%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 14
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -p 12345 -s C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//07//0860.fasta -n rax_ml_1000___10007_0860.tre -m GTRGAMMA 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.398 0.212 0.268 0.122 
+
+Inference[0]: Time 0.727003 GAMMA-based likelihood -208.444539, best rearrangement setting 5
+alpha[0]: 0.225423 rates[0] ac ag at cg ct gt: 0.645075 0.889716 0.863218 0.000100 1.034431 1.000000 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -208.412577 tree written to file C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_result.rax_ml_1000___10007_0860.tre
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -208.412577 .... 
+
+Final GAMMA-based Score of best tree -208.412487
+
+Program execution info written to C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_info.rax_ml_1000___10007_0860.tre
+Best-scoring ML tree written to: C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_bestTree.rax_ml_1000___10007_0860.tre
+
+Overall execution time: 1.128008 secs or 0.000313 hours or 0.000013 days
+

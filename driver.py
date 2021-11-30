@@ -16,12 +16,6 @@ import copy
 import re
 
 
-
-
-
-
-
-
 #raxml
 def raxml(input_,output):
 	os.system('raxmlHPC -p 1 -s "'+input_+'" -n "'+output+'" -m GTRGAMMA')
@@ -236,7 +230,7 @@ TODO Compare the tree and generate stats
 
 def main(astral,file,k,j,l):
 	print(astral,file)
-	branch_collapse(astral,'0.8','collapsed/collapsed_'+k+'_'+j+'_'+l+'.tre')
+	branch_collapse(astral,'0.4','collapsed/collapsed_'+k+'_'+j+'_'+l+'.tre')
 	dict0,tree_=get_polytomies('collapsed/collapsed_'+k+'_'+j+'_'+l+'.tre')
 
 
@@ -272,6 +266,8 @@ def main(astral,file,k,j,l):
 
 location='C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//'
 
+location1='C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//gene_miss//25tax-1000gen-0bps-500K-1E-6-rand//'
+
 
 folder_name=['25tax-1000gen-0bps-500K-1E-6-rand-miss']
 sub_folder_name_6=['04','05','07','11','13','16','17','20']
@@ -279,21 +275,25 @@ sub_folder_name_6=['04','05','07','11','13','16','17','20']
 
 sub_folder_name_7=['03','04','05','08','09','12','15','16','17']
 
-li=['100','1000']
+
+li=['100','1000','500','250','50']
 
 #,'500','250','50']
 
 for k in li:
 	for j in sub_folder_name_6:
+		#astral(location1+str(j)+'//oraxml-genes.tre', './svd_output//astral_6_'+j+'_'+k+'.tre')
 		main('./svd_output//astral_6_'+j+'_'+k+'.tre',location+j+'//','6',j,k)
 
 location='C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-7-rand//'
 
 
 
-
+'''
 for k in li:
 	for j in sub_folder_name_7:
+		astral('raxml-genes.tre', './svd_output//astral_6_'+j+'_'+k+'.tre')
 		main('./svd_output//astral_7_'+j+'_'+k+'.tre',location+j+'//','7',j,k)
 
 
+'''

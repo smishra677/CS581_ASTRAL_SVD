@@ -35,4 +35,4 @@ for i in branch_lengths:
 
 print(new_branch)
 
-print(','.join(new_branch))
+print('(',.join(new_branch))

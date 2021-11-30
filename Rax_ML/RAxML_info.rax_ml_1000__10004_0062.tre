@@ -1,0 +1,146 @@
+
+
+IMPORTANT WARNING: Sequences 56 and 191 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 82 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 112 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 175 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 0 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 187 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 7 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 169 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 165 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 161 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 97 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 56 and 30 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 173 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 20 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 21 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 29 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 19 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 37 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 155 and 35 are exactly identical
+
+IMPORTANT WARNING
+Found 19 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+An alignment file with sequence duplicates removed has already
+been printed to file C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//04//0062.fas.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.2.10 released by Alexandros Stamatakis on March 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 12 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.00%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 12
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -p 12345 -s C://Users//smish//Documents//Astral.5.7.8//Astral//Data_//alignments_miss//25tax-1000gen-0bps-500K-1E-6-rand//04//0062.fas -n rax_ml_1000__10004_0062.tre -m GTRGAMMA 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.340 0.210 0.185 0.265 
+
+
+WARNING the alpha parameter with a value of 12.857707 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+Inference[0]: Time 0.455969 GAMMA-based likelihood -736.120304, best rearrangement setting 5
+alpha[0]: 12.857707 rates[0] ac ag at cg ct gt: 0.671681 0.390861 0.252966 1.230937 0.000100 1.000000 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+
+WARNING the alpha parameter with a value of 29.747667 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+Inference[0] final GAMMA-based Likelihood: -736.117631 tree written to file C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_result.rax_ml_1000__10004_0062.tre
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -736.117631 .... 
+
+Final GAMMA-based Score of best tree -736.117631
+
+Program execution info written to C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_info.rax_ml_1000__10004_0062.tre
+Best-scoring ML tree written to: C:\Users\smish\OneDrive\Documents\GitHub\CS581_ASTRAL_SVD\Rax_ML\RAxML_bestTree.rax_ml_1000__10004_0062.tre
+
+Overall execution time: 1.151205 secs or 0.000320 hours or 0.000013 days
+

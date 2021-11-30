@@ -9,7 +9,7 @@ sub_folder_name_7=['//03//','//04//','//05//','//08//','//09//','//12//','//15//
 file_astral=['astral-keep-miss-50.tre','astral-keep-miss-100.tre','astral-keep-miss-250.tre','astral-keep-miss-500.tre','astral-keep-miss-1000.tre']
 file_svd=['svdquartets-keep-miss-50.tre','svdquartets-keep-miss-100.tre','svdquartets-keep-miss-250.tre','svdquartets-keep-miss-500.tre','svdquartets-keep-miss-1000.tre']
 
-
+'''
 for i in folder_name:
 	for j in sub_folder_name_7:
 		for k in file_astral:
@@ -34,7 +34,7 @@ for i in folder_name:
 			shutil.copy(location+i+j+k,'svd_6_'+str(j[2:4])+'_'+k.split('-')[3].split('.')[0]+'.tre')
 
 
-
+'''
 for i in folder_name:
 	for j in sub_folder_name_6:
 		shutil.copy(location+i+j+'true-species.tre','true-species_6_'+str(j[2:4])+'.tre')

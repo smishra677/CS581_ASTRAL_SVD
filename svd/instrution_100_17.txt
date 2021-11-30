@@ -1,0 +1,1 @@
+exe COMBINED_100_17.nex;svd showScores=no evalQuartets=all qformat=qmc replace=no;savetrees file='out_svd_100_17.tre'format='newick' replace='yes';quit;
