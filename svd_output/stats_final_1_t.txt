@@ -1,4 +1,4 @@
-Method	dataset			nl	ei1	ei2	fp	fn	data	rf
+Method	dataset	Threshold	Method_Threshold	nl	ei1	ei2	fp	fn	data	rf
 Astral	1000	_8	Astral_8	26	23	23	7	7	Astral1000_8	0.304347826
 Astral	1000	_8	Astral_8	26	23	23	2	2	Astral1000_8	0.086956522
 Astral	1000	_8	Astral_8	26	23	23	5	5	Astral1000_8	0.217391304

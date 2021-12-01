@@ -1,4 +1,4 @@
-Method                ,dataset         ,nl              ,ei1         ,ei2          ,fp         ,fn          ,rf        
+Method,dataset,nl,ei1,ei2,fp,fn,rf
 Astral                ,1000,26,23,23,23,23,1
 Astral                ,1000,26,23,23,6,6,0.260869565
 Astral                ,1000,26,23,23,13,13,0.565217391
