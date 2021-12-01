@@ -39,7 +39,7 @@ def compareDendropyTrees(tr1, tr2):
     rf = float(fp + fn) / (ei1 + ei2)
     return (nl, ei1, ei2, fp, fn, rf)
 
-f=open('stats_final_1_t.txt','w+')
+f=open('stats_final_1_35.txt','w+')
 f.write('{0:20}  {1:14}  {2:14}  {3:10}  {4:10}   {5:10} {6:10}  {7:10}\n'.format('Method','dataset','nl', 'ei1', 'ei2','fp', 'fn', 'rf'))
 
 

@@ -304,7 +304,7 @@ def starter(threshold):
 import time
 
 f=open('timer.txt','w+')
-for i in [0.4,0.8]:
+for i in [0.35]:
 	start=time.time()
 	starter(i)
 	end=time.time()
