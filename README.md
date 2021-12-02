@@ -43,6 +43,7 @@ datasets with a high gene tree estimation error (GTEE) as ASTRAL-II suffers in a
 datasets with this characteristic.
 
 ### Pipeline:
+To run a python file open the terminal and run python3 <file_name>.py
 
 ## Data
 
