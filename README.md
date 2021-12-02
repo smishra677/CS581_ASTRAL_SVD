@@ -82,6 +82,8 @@ Our method, USA, is implemented in driver.py, where it runs on three threshold s
 driver.py can be found at https://github.com/smishra677/CS581_ASTRAL_SVD.
 
 
+## display_results.py
+The display_results.py script creates the graphical display of all results found in the svd_outputs/FinalData.csv file. Results can be grouped in comparing across methods and across threshold values, as well as comparing runtime results across methods as well. The display_results.py script can be found at https://github.com/smishra677/CS581_ASTRAL_SVD/blob/main/display_results.py.
 
 
 
