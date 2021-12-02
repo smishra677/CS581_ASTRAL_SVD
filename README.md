@@ -42,7 +42,7 @@ SVDquartets+ PAUP* on some subset of leaves within those polytomies. Our method 
 datasets with a high gene tree estimation error (GTEE) as ASTRAL-II suffers in accuracy of
 datasets with this characteristic.
 
-###Pipeline:
+### Pipeline:
 
 ## Data
 
