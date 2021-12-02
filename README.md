@@ -44,40 +44,40 @@ datasets with this characteristic.
 
 ###Pipeline:
 
-##Data
+## Data
 
 The actual data can be found at 
 https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/input/25tax-1000gen-0bps-500K-1E-6-rand
 
 The replicates used are 05, 11,13,16, and 20.
 
-##svd_bps.py
+## svd_bps.py
 There are 1000 alignment files(001-1000) in each replicate folder. These files are in .fas format. We then use the svd_bps.py, which can be found in 
 https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/Rax_ML
 svd_bps.py goes over all the 1000 fas files and selects the first 100 sites from the taxon in those files. 
 It then creates new alignment files with these 100 sites. The alignment files are named the same 001-1000 but have .fasta formatting.
 
-##rax.py
+## rax.py
 After this, we run rax.py, which runs raxml for all the alignment files created by svd_bps.py.
 rax.py and all the outputs created raxML can be found in  https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/Rax_ML
 
 
-##merge.py
+## merge.py
 After running the raxml we use merge.py to merge all the gene tree files created by rax.py.  The merge happens for a replicate and the model condition.
 merge.py can be found in https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/Rax_ML
 
 
-##astral.py
+## astral.py
 Now we run astral using astral.py.  This file can be found in https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/Rax_ML.
 
 
-##nex.py
+## nex.py
 Since we are done with astral we now use nex.py to convert all the fasta files created by nex.py to .nex file and to merge all the nex files concerning a replicate and the model condition. 
 
-##svd.py
+## svd.py
 We have created a combined nex file; we use svd.py, which first creates all the instructions.txt for the SVDQuartets and runs it according to the instruction. We can find nex.py, svd.py https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/svd.
 
-##drive.py
+## drive.py
 Our method, USA, is implemented in driver.py, where it runs on three threshold sizes [0.35,0.4,0.8], and from each subtree, we are selecting one taxon.  Here Newick utility is called to collapse the branches with lower support values than the threshold, and then all the polytomies are extracted, and we run svdQuartets to resolve these polytomies.
 driver.py can be found at https://github.com/smishra677/CS581_ASTRAL_SVD.
 
@@ -85,7 +85,7 @@ driver.py can be found at https://github.com/smishra677/CS581_ASTRAL_SVD.
 
 
 
-##comparision.py
+## comparision.py
 There is comparision.py which compares the output of our method with the true species tree. 
 comparision.py uses dendropy to compare this and can be comparision.py at https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/svd_output  
 
