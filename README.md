@@ -78,7 +78,7 @@ Since we are done with astral we now use nex.py to convert all the fasta files c
 ## svd.py
 We have created a combined nex file; we use svd.py, which first creates all the instructions.txt for the SVDQuartets and runs it according to the instruction. We can find nex.py, svd.py https://github.com/smishra677/CS581_ASTRAL_SVD/tree/main/svd.
 
-## drive.py
+## driver.py
 Our method, USA, is implemented in driver.py, where it runs on three threshold sizes [0.35,0.4,0.8], and from each subtree, we are selecting one taxon.  Here Newick utility is called to collapse the branches with lower support values than the threshold, and then all the polytomies are extracted, and we run svdQuartets to resolve these polytomies.
 driver.py can be found at https://github.com/smishra677/CS581_ASTRAL_SVD.
 
